@@ -1,7 +1,7 @@
 title: J3rich0 Terminal
 email: j3rich0123@proton.me
 description: CTF writeups, homelab experiments, and AD pentesting.
-baseurl: ""
+baseurl: "/cyberblog"
 url: "https://j3r1ch0123.github.io"
 github_username: j3r1ch0123
 permalink: /cyberblog/writeups/:slug/
