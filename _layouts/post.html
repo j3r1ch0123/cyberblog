@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — J3rich0 Terminal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0e0a;
+      color: #33ff33;
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid #1a3a1a;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .titlebar {
+      background: #0f180f;
+      border-bottom: 1px solid #1f3b1f;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #4db34d;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #3a1010; border: 1px solid #6b2020; }
+    .dot-y { background: #2d2a0f; border: 1px solid #5a520f; }
+    .dot-g { background: #0f2b0f; border: 1px solid #1f5a1f; }
+
+    .body {
+      padding: 28px 32px 40px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #1a8c1a;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .back-link:hover { color: #39ff14; }
+
+    .post-meta {
+      color: #2d7a2d;
+      font-size: 12px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #1a3a1a;
+      border-radius: 4px;
+    }
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 42px;
+      color: #39ff14;
+      letter-spacing: 3px;
+      text-shadow: 0 0 14px #39ff1455;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #1a3a1a;
+      margin: 24px 0;
+    }
+
+    /* Post content styles */
+    .post-content h2 {
+      font-family: 'VT323', monospace;
+      font-size: 28px;
+      color: #39ff14;
+      letter-spacing: 2px;
+      margin: 28px 0 12px;
+    }
+
+    .post-content h3 {
+      font-family: 'VT323', monospace;
+      font-size: 22px;
+      color: #4db34d;
+      letter-spacing: 1px;
+      margin: 20px 0 10px;
+    }
+
+    .post-content p {
+      color: #4db34d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    .post-content ul, .post-content ol {
+      color: #4db34d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0 0 12px 20px;
+    }
+
+    .post-content ul li::marker { color: #1a8c1a; }
+    .post-content ol li::marker { color: #1a8c1a; }
+
+    .post-content a {
+      color: #39ff14;
+      text-decoration: none;
+    }
+
+    .post-content a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 6px #39ff1488;
+    }
+
+    .post-content strong { color: #b3ffb3; }
+
+    .post-content code {
+      background: #0f180f;
+      color: #39ff14;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      border: 1px solid #1a3a1a;
+    }
+
+    .post-content pre {
+      background: #0f180f;
+      border: 1px solid #1a3a1a;
+      border-left: 3px solid #39ff14;
+      border-radius: 4px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    .post-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 12px;
+      color: #b3ffb3;
+      line-height: 1.7;
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid #1a8c1a;
+      padding-left: 16px;
+      color: #2d7a2d;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding-top: 14px;
+      border-top: 1px solid #1a3a1a;
+      font-size: 11px;
+      color: #1a5a1a;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="titlebar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span style="margin-left:8px;">j3rich0@kali:~/blog/{{ page.slug }} — bash</span>
+    </div>
+    <div class="body">
+      <a class="back-link" href="/">← cd ~/home</a>
+      <div class="post-meta">{{ page.date | date: "%Y-%m-%d" }} // {{ page.categories | join: " · " }}</div>
+      <h1>{{ page.title }}</h1>
+      <hr>
+      <div class="post-content">
+        {{ content }}
+      </div>
+      <div class="footer">
+        <span>github.io/j3r1ch0123</span>
+        <span>[ end of file ]</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
