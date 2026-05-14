@@ -14,6 +14,11 @@ theme: jekyll-theme-midnight
 plugins:
   - jekyll-feed
 
+collections:
+  writeups:
+    output: true
+    permalink: /writeups/:name/
+
 # Exclude from processing
 # exclude:
 #   - Gemfile
