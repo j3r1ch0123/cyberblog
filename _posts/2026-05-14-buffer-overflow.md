@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Understanding Remote Buffer Overflows in a Controlled Lab"
+permalink: /writeups/buffer-overflow/
 date: 2026-05-14 15:20:46 -0400
 categories: exploit-development binary-exploitation homelab
 ---
