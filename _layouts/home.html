@@ -202,7 +202,7 @@
       <div class="section-label">// challenge writeups</div>
       <h2>WRITEUPS</h2>
       {% for post in site.posts %}
-      <a class="writeup-link" href="{{ post.url }}">{{ post.title }}</a>
+      <a class="writeup-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       {% endfor %}
 
       <hr>
