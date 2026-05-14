@@ -5,6 +5,7 @@ baseurl: "/cyberblog"
 url: "https://j3r1ch0123.github.io"
 github_username: j3r1ch0123
 permalink: /cyberblog/writeups/:slug/
+theme: null
 
 # Build settings
 plugins:
