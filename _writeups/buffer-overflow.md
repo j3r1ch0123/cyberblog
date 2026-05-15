@@ -136,7 +136,7 @@ A * 100
 
 # Screenshots
 
-![](/assets/images/exploit.png)
+![Exploit Screenshot]({{ "/assets/images/exploit.png" | relative_url }})
 
 ---
 
