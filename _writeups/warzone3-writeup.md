@@ -1,3 +1,8 @@
+---
+layout: post
+title: Warzone 3
+---
+
 # Warzone 3: Exogen — VulnHub Writeup
 
 **Difficulty:** Hard  
